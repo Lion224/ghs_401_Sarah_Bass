@@ -2,6 +2,6 @@
 public class Tuesday
 {
     static void main() {
-        System.out.println("Audjuord'hui le 4 de decembre.");
+        System.out.println("Aujuord'hui le 4 de decembre.");
     }
 }
