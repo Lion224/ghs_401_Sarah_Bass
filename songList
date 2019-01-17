@@ -1,0 +1,51 @@
+
+public class Stuff2
+{
+    public static void main(){  
+        String[] songList1 = {"Jump     ", "Respect  ", null, "Apologize", "September", null, null};
+        String[] songList2 = {"Magic Carpet Ride", "Respect          ","Life is a Highway", null, "Stairway to Heaven",
+        null, "Under Pressure   "};
+        String[] myPlaylist = new String[7];
+        
+        
+        System.out.println("\nIndex\tList1\t\tList2\t\t\tMy Playlist");
+        for(int i = 0; i < myPlaylist.length; i++){
+           
+            if (songList1[i] == null && songList2[i] == null) {
+                String song = null;
+                while (song == null) {
+                    int random = (int) (Math.random()*7);
+                    song = songList1[random];
+                }
+                
+                myPlaylist[i] = song;
+            }
+            else if (songList1[i] == null ){
+                myPlaylist[i] = songList2[i];
+            }
+            else if (songList2[i] == null){
+                myPlaylist[i] = songList1[i];
+            }
+            else if (songList1[i].compareTo(songList2[i]) < 0){
+                myPlaylist[i] = songList1[i];
+            }
+            else if (songList1[i].compareTo(songList2[i]) > 0){
+                myPlaylist[i] = songList2[i];
+            }
+            else if (songList1[i].compareTo(songList2[i]) == 0){
+                myPlaylist[i] = songList2[i];
+            }
+            
+            String song = songList1[i];
+            if ( song == null) {
+                song = "null       ";
+            }
+            String song2 = songList2[i];
+            if ( song2 == null) {
+                song2 = "null            ";
+            }
+            System.out.println((i+1) + "\t" + song + "\t" + song2 + 
+            "\t" + myPlaylist[i]);
+        }
+    }
+}
